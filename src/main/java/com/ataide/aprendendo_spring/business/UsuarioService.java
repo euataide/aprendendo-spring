@@ -4,14 +4,10 @@ import com.ataide.aprendendo_spring.infrastructure.entity.Usuario;
 import com.ataide.aprendendo_spring.infrastructure.exceptions.ConflictException;
 import com.ataide.aprendendo_spring.infrastructure.exceptions.ResourceNotFoundException;
 import com.ataide.aprendendo_spring.infrastructure.repository.UsuarioRepository;
-import io.jsonwebtoken.security.Password;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.authentication.configuration.GlobalAuthenticationConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.naming.ConfigurationException;
-import java.net.PasswordAuthentication;
 
 @Service
 @RequiredArgsConstructor
@@ -22,6 +18,7 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
     private final GlobalAuthenticationConfigurerAdapter enableGlobalAuthenticationAutowiredConfigurer;
+
 
     public Usuario salvaUsuario(Usuario usuario){
         try {
